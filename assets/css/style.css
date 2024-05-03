@@ -1649,6 +1649,7 @@ option {
 
 .panel-table th, 
 .panel-table td {
+
     border: 1px solid #ffffff;
     padding: 20px;
     text-align: center;
@@ -3360,7 +3361,10 @@ margin: 25px 0;
    width: 40%;
 
 }
-
+#category option{
+    font-size: 14px;
+    padding: 5px;
+}
 
 }
 
@@ -4215,7 +4219,7 @@ margin: 25px 0;
 }
 #m,#category{
     padding: 12px ;
-    font-size: 13px;
+    font-size: 11px;
     border-radius: 15px;
 
 }
@@ -4355,6 +4359,10 @@ margin: 25px 0;
     width: 50%;
 
 }
+#category option{
+    font-size: 11px;
+    padding: 5px;
+}
 }
 @media screen and (max-width: 500px) {
     .adaptive-table thead {
@@ -4363,6 +4371,7 @@ margin: 25px 0;
 
     .adaptive-table tbody {
         display: flex;
+       
     }
 
 
@@ -4370,6 +4379,7 @@ margin: 25px 0;
         display: flex;
         width: 100%;
         justify-content: space-between;
+        gap: 50px;
     }
 
     .adaptive-table td::before {
@@ -4385,6 +4395,8 @@ margin: 25px 0;
         padding-right: 0;
         text-align: right;
     }
+
+
     
 }
 

@@ -1337,6 +1337,7 @@ option {
 #category{
     margin-left: 0px;
 }
+
 #mm{ justify-content: center;
     padding: 35px  ;
     border: none;
@@ -1563,7 +1564,8 @@ option {
     border: 1px solid rgb(0, 0, 0);
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 80px;
+    
+   
 }
 
 #panel_admin:hover{
@@ -1572,6 +1574,7 @@ option {
     border: 1px solid black;
     transition: all .5s ease-in-out;
 }
+
 
 
 
@@ -1748,12 +1751,12 @@ option {
 }
 
 
-.adm_kat {
+/* .adm_kat {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 50px;
-}
+} */
 
 .adm_kat{
     display: flex;
@@ -1771,7 +1774,7 @@ option {
     text-align: center;
     width: 33.33%; 
     box-sizing: border-box; 
-    padding: 10px; /
+    padding: 10px; 
     
 
 }
@@ -1779,6 +1782,57 @@ option {
     margin-bottom: 30px;
 }
 
+.que_ta{
+    display: flex;
+    justify-content: space-between;
+    margin: 70px 0 70px 0;
+    flex-wrap: wrap;
+    
+    
+}
+#za{
+    text-transform: uppercase;
+    font-weight: 450;
+    font-size: 21;
+    margin-bottom: 15px;
+}
+#quuu{
+    font-size: 20px;
+    max-width: auto;
+   
+  
+}
+
+.queone{
+    margin-top: 30px ;
+
+    font-weight: 450;
+    text-align: center;
+    width: 33.33%; 
+    box-sizing: border-box; 
+    padding: 10px; 
+    border: 1px solid rgb(255, 255, 255);
+   
+    
+}
+.queone:hover{
+    border: 1px solid black;
+}
+#tq{
+    font-size: 19px;
+    margin-bottom: 10px
+}
+#ta{
+    font-size: 19px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+.queone p{
+    margin-bottom: 10px;
+}
+.icons_pan img{
+ cursor: pointer;
+}
 /*------------------*админ панель пользовтели----------------*/
 
 @media (max-width: 1550px) {
@@ -1870,6 +1924,9 @@ option {
     .kat_p{
         font-size: 23px;
     }
+
+    
+  
 
 }
 
@@ -2635,7 +2692,22 @@ font-size: 20px;
    width: 30%;
 
 }
-
+.que_ta{
+    margin: 45px 0;
+}
+#za{
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+#quuu{
+    font-size: 18px;
+}
+#tq{
+    font-size: 17px;
+}
+#ta{
+    font-size: 17px;
+}
 
 
 }
@@ -3364,6 +3436,14 @@ margin: 25px 0;
 #category option{
     font-size: 14px;
     padding: 5px;
+}
+
+.que_ta{
+    margin: 30px 0;
+}
+
+.queone{
+    width: 50%;
 }
 
 }
@@ -4363,6 +4443,30 @@ margin: 25px 0;
     font-size: 11px;
     padding: 5px;
 }
+.que_ta{
+    margin: 25px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#za{
+    font-size: 15px;
+    margin-bottom: 9px;
+}
+#quuu{
+    font-size: 13px;
+}
+#tq{
+    font-size: 14px;
+}
+#ta{
+    font-size: 14px;
+}
+
+.queone{
+    width: 100%;
+}
+
 }
 @media screen and (max-width: 500px) {
     .adaptive-table thead {

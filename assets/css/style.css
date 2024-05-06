@@ -939,6 +939,7 @@ option {
     font-weight: 400;
     margin-bottom: 9px;
     letter-spacing: 5px;
+    text-transform: uppercase;
 }
 
 #artikul{
@@ -1006,8 +1007,8 @@ option {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    
-    width: auto;
+    max-width: 400px; /* задайте нужное значение для ограничения ширины */
+    margin: 0 auto; /* центрируем блок */
 }
 
 #nazvanie_block{
@@ -1022,6 +1023,10 @@ option {
     font-weight: 250;
     text-align: center;
     height: 330px;
+    max-width: 400px; /* задайте нужное значение для ограничения ширины */
+    margin: 0 auto; 
+    flex-wrap: wrap;
+   
 }
 
 #razvernyt{

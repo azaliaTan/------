@@ -1,101 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>BOTANICA</title>
-</head>
-<body>
+<!--БАННЕР-->
 
-   <!-- ШАПКА -->
-
-    <header>
-     <div class="container">
-        <ul class="header-ul">
-             <li class="logo">
-                 <a href="index.html"> <img src="assets/img/logoPK.png" alt="logo"></a>
-                <p>botanica</p>
-            </li>          
-            
-            <input type="text" placeholder="поиск" id="header_input">
-
-            <li class="icons">
-                <ul class="nav-buttons">
-                    <li><a href="izbr.html"><img src="assets/img/love.png" alt="love"></a></li>
-                    <li><a href="korzina.html"><img src="assets/img/shop.png" alt="shop"></a></li>
-                    <li><a href="vhod.html"><img src="assets/img/user.png" alt="user"></a></li>
-                    <li class="nav-buttons__burger"><a href="#burger-nav"><img src="assets/img/bur.png" alt="burger"></a></li>
-                </ul>
-                    
-                 
-                 
-
-                 <!-- <input type="checkbox" name="" id="burger">
-                 <label for="burger"></label>
-                 <nav>
-                     <ul>
-                         <li><a href="index.html">Главная</a></li>
-                         <li><a href="#">Каталог</a></li>
-                         <li><a href="information.html">О нас</a></li>
-                         <li><a href="#">Контакты</a></li>
-                        
-                    
-                     </ul>
-                 </nav> -->
-                
-        
-
-            </li>
-
-           
-        
-        </ul>
-         <div class="header_two">
-
-            
-         <input type="text" name="" id="input_two_header" placeholder="поиск">
-            
-        <ul class="nav" id="burger-nav">
-            <li class="nav__close-button">
-                <a href="#">
-                    <img src="assets/img/close.png" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="index.html">Главная</a>
-            </li>
-            <li>
-                <a href="katalog.html">Каталог</a>
-            </li>
-            <li>
-                <a href="infor.html">О нас</a>
-            </li>
-            <li>
-                <a href="">Контакты</a>
-            </li>
-        </ul>
-
-        <li class="svyaz">
-            <p id="ss">Связаться с нами: </p>
-            <img src="assets/img/tel.png" alt="telephone" id="tel">
-            <a href="tel:+">+7 (999) 999 99 99</a>
-
-        </li>
-        </div>
-
-     </div>
-    </header>
-
-    <!--------------------------------------ШАПКА-------------------------->
-
-
-     <!--БАННЕР-->
-
-     <div class="banner">
+<div class="banner">
         <div class="container">
             <div class="baner">
                 <div class="text_banner">
@@ -202,7 +107,7 @@
                 <div class="list">
                     <div class="text_kat">
                         <p>Лиственные и цветущие растения</p>
-                        <p id="otkr">Открыть каталог...</p>
+                        <a href="?page=katalog"><p id="otkr">Открыть каталог...</p></a>
                     </div>
                     <img src="assets/img/list.png" alt="listvennie">
                 </div>
@@ -210,7 +115,7 @@
                  <div class="svet">
                     <div class="text_kat">
                     <p>Плодовые и цитрусовые растения</p>
-                    <p id="otkr">Открыть каталог...</p>
+                    <a href="?page=katalog"><p id="otkr">Открыть каталог...</p></a>
                  </div>
                  <img src="assets/img/svet.png" alt="svetyshie">
                  </div>
@@ -220,7 +125,7 @@
                     <div class="text_kat_ecz">
                     <p>Экзотические растения</p>
                     <img src="assets/img/eczot.png" alt="eczoticheskie" id="ecz"> 
-                    <p id="otkr">Открыть каталог...</p>
+                    <a href="?page=katalog"><p id="otkr">Открыть каталог...</p></a>
                  </div>
                  <img src="assets/img/eczot.png" alt="eczoticheskie" id="eczot">
                  </div>
@@ -322,7 +227,7 @@
               Покупая растения у нас, вы делаете выбор в пользу 
               здоровья и красоты вашего дома.</p>
 
-        <a href=""><button>Больше о нас</button></a>
+        <a href="?page=infor"><button>Больше о нас</button></a>
     </div>
 </div>
 
@@ -372,69 +277,36 @@
 
 <div class="container">
     <p id="pop">Есть вопросы?</p>
- <form action="" name="" id="vopr">
-    <input type="text" placeholder="Введите ваше имя" id="q">
-    <input type="tel" placeholder="Введите ваш телефон" id="w">
-    <textarea name=""  cols="10" rows="2" id="e">Введите ваш вопрос</textarea>
+ <form method="POST" name="vopr" id="vopr">
+ 
+                     <?php
+                    
+                    if(isset($_POST['vopr'])){
+                       
+                         $name=$_POST['name'];
+                         $text=$_POST['text'];
+                         $number=$_POST['number'];
+
+                         $sql="INSERT INTO question (name,text,number)
+                            VALUE ('$name','$text','$number')";
+
+                            $link ->query($sql);
+                            echo '<script>document.location.href="?"</script>';
+                            
+                            }?>
+
+
+    <input type="text" placeholder="Введите ваше имя" id="q" name="name">
+    <input type="tel" placeholder="Введите ваш телефон" id="w" name="number">
+    <textarea name="text"  cols="10" rows="2" id="e" >Введите ваш вопрос</textarea>
     <div class="sogl">
         <input type="checkbox" name="" id="obrabotka">
         <p>Даю свое согласие на  <a href="assets/doc/ПерсональныеДанные.docx" target="_blank" rel="noopener noreferrer"><u> обработку персональных данных</p></u></a>
     </div>
-    <input type="submit" id="sub" value="отправить">
+    <input type="submit" id="sub" value="отправить" name="vopr">
 </form>
     
  </div>
 </div>
 
 <!--------------------------------------ВОПРОСЫ-------------------------->
-    <!--ПОДВАЛ-->
-
-<footer>
-    <div class="container">
-        <div class="footer">
-
-            <div class="logof">
-                <img src="assets/img/logoPK.png" alt="logo">
-                <p>botanica</p>
-            </div>
-
-         <ul class="footer_ul">
-            <li>Главная</li>
-            <li>Каталог</li>
-            <li>О нас</li>
-            <li>Контакты</li>
-         </ul>
-
-         <div class="futer-ic">
-            <img src="assets/img/love.png" alt="love">
-            <img src="assets/img/shop.png" alt="shop">
-            <img src="assets/img/user.png" alt="user">
-         </div>
-         
-         <div class="footer_kon">
-            <a href="tel:+">+7 (999) 999 99 99 </a>
-            <a href="mailto:">botanica@mail.ru</a>
-         </div>
-
-         <div class="futer-ic">
-            <img src="assets/img/wat.png" alt="watsup">
-            <img src="assets/img/vk.png" alt="vkontakte">
-            <img src="assets/img/telf.png" alt="telephone">
-         </div>
-
-         <div class="copp">
-            <img src="assets/img/copyright.png" alt="copyright">
-          <p> tanaeva 2024 Все права защищены. Используя сайт, вы принимаете условия соглашений. Информация на сайте не является публичной офертой.</p> 
-          
-        </div>
-
-
-
-        </div>
-
-    </div>
-
-</footer>
-    <!--------------------------------------ПОДВАЛ-------------------------->
-</body>
-</html>

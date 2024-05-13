@@ -29,6 +29,7 @@ body {
     padding-bottom: 510px; /* высота  футера */
     min-height: 100%;
     position: relative;
+    font-family: var(--font-family-m);
     
   }
 
@@ -102,7 +103,7 @@ body {
 
 .nav {
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 300;
     font-family: var(--font-family-m);
     display: flex;
 }
@@ -408,7 +409,7 @@ body {
     font-size: 45px;
     text-transform: uppercase;
     letter-spacing: 5px;
-
+     font-family: var(--font-family-m);
     margin-top: 100px;
 
     text-align: center;
@@ -1007,7 +1008,7 @@ option {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 400px; /* задайте нужное значение для ограничения ширины */
+    /* задайте нужное значение для ограничения ширины */
     margin: 0 auto; /* центрируем блок */
 }
 
@@ -1019,13 +1020,13 @@ option {
 
 
 #opis{
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 250;
     text-align: center;
     height: 330px;
-    max-width: 400px; /* задайте нужное значение для ограничения ширины */
-    margin: 0 auto; 
-    flex-wrap: wrap;
+    max-width: 900px; /* задайте нужное значение для ограничения ширины */
+    
+    word-wrap: break-word;
    
 }
 
@@ -1346,6 +1347,7 @@ h4{
     font-weight: 400;
     letter-spacing: 3px;
     text-align: center;
+    font-family: var(--font-family-m);
 }
 
 #neyspeh{
@@ -1355,6 +1357,9 @@ h4{
     text-align: center;
     align-items: center;
     margin: 20px 0;
+    font-weight: 400;
+     font-family: var(--font-family-m);
+     letter-spacing: 2px;
 
 }
 #category{
@@ -1807,9 +1812,10 @@ h4{
 
 .que_ta{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 70px 0 70px 0;
     flex-wrap: wrap;
+   
     
     
 }
@@ -1822,6 +1828,7 @@ h4{
 #quuu{
     font-size: 20px;
     max-width: auto;
+    word-wrap: break-word;
    
   
 }
@@ -1831,7 +1838,7 @@ h4{
 
     font-weight: 450;
     text-align: center;
-    width: 33.33%; 
+    width: 40%; 
     box-sizing: border-box; 
     padding: 10px; 
     border: 1px solid rgb(255, 255, 255);
@@ -1855,6 +1862,16 @@ h4{
 }
 .icons_pan img{
  cursor: pointer;
+}
+#uuu{
+    font-size: 30px;
+    text-align: center;
+    font-family: var(--font-family-m);
+    margin: 40px 0 200px 0;
+
+}
+#uuu a{
+    color: rgba(40, 126, 19, 0.72) ;
 }
 /*------------------*админ панель пользовтели----------------*/
 
@@ -2034,6 +2051,11 @@ h4{
     padding: 15px 40px 15px 40px;
    
 }
+#uuu{
+    font-size: 25px;
+  
+
+}
 
 .tovar_opis{
     gap: 100px;
@@ -2113,7 +2135,10 @@ h4{
         font-size: 15px ;
     }
 
-
+    #uuu{
+        font-size: 23px;
+        
+    }
     .baner{
         gap: 60px;
      }
@@ -2574,8 +2599,14 @@ padding-top: 60px;
 }
 #add{
     max-width: 400px;
-    gap: 30px;
+    gap: 15px;
     padding-top: 50px;
+}
+h4{
+    font-size: 12px ;
+}
+#neyspeh{
+    font-size: 17px;
 }
 #m,#category{
     padding: 20px ;
@@ -2745,6 +2776,10 @@ font-size: 20px;
     .container{
         max-width: 700px;
     }
+    #uuu{
+        font-size: 18px;
+        
+    }
     .infa_pan_three{
         gap: 50px;
     }
@@ -2759,8 +2794,16 @@ font-size: 20px;
     }
     #add{
         max-width: 400px;
-        gap: 27px;
+        gap: 10px;
         padding-top: 50px;
+    }
+    h4{
+        font-size: 12px ;
+    letter-spacing: 2px;
+
+    }
+    #neyspeh{
+        font-size: 17px;
     }
     #m,#category{
         padding: 18px ;
@@ -3307,8 +3350,14 @@ margin: 25px 0;
 
 #add{
     max-width: 350px;
-    gap: 20px;
+    gap: 9px;
     padding-top: 40px;
+}
+h4{
+    font-size: 10px ;
+}
+#neyspeh{
+    font-size: 15px;
 }
 #m,#category{
     padding: 15px ;
@@ -3473,10 +3522,13 @@ margin: 25px 0;
 
 
 
-@media (max-width: 620px) {
+@media (max-width: 635px) {
 
     .container{
         max-width: 580px;
+    }
+    #uuu{
+        font-size: 15px;
     }
 
     .baner{
@@ -3514,8 +3566,7 @@ margin: 25px 0;
         gap: 20px;
     
     }
-
-
+   
     .adm_kat{
         margin: 20px 0;
     }
@@ -3846,7 +3897,7 @@ margin: 25px 0;
     gap: 90px;
 }
   .panel-table td {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 340;
 }
 
@@ -3894,6 +3945,9 @@ margin: 25px 0;
 
     .container{
         max-width: 400px;
+    }
+    #uuu{
+        font-size: 13px;
     }
     body {
         
@@ -4317,8 +4371,16 @@ margin: 25px 0;
 
 #add{
     max-width: 250px;
-    gap: 15px;
+    gap: 9px;
     padding-top: 30px;
+}
+h4{
+    font-size: 8px ;
+    letter-spacing: 1px;
+    
+}
+#neyspeh{
+    font-size: 13px;
 }
 #m,#category{
     padding: 12px ;
@@ -4491,6 +4553,7 @@ margin: 25px 0;
 }
 
 }
+
 @media screen and (max-width: 500px) {
     .adaptive-table thead {
         display: none;
@@ -4762,6 +4825,9 @@ margin: 25px 0;
     padding: 10px 15px;
     margin: 26px 0 70px 0;
     border: 1px solid black;
+}
+#uuu{
+    font-size: 12px;
 }
 .delete{
     margin: 20px 0 80px 0;

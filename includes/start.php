@@ -279,30 +279,71 @@
     <p id="pop">Есть вопросы?</p>
  <form method="POST" name="vopr" id="vopr">
  
-                     <?php
+<?php
+
+ $name='';
+ $number='';
+$text='';
                     
-                    if(isset($_POST['vopr'])){
+   if(isset($_POST['vopr'])){
                        
-                         $name=$_POST['name'];
-                         $text=$_POST['text'];
-                         $number=$_POST['number'];
+     $name=$_POST['name'];
+     $text=$_POST['text'];
+     $number=$_POST['number'];
 
-                         $sql="INSERT INTO question (name,text,number)
-                            VALUE ('$name','$text','$number')";
+     $error_namet = '';
+    $error_number = '';
+    $error_textt = '';
+    $error_sogla = '';
 
-                            $link ->query($sql);
-                            echo '<script>document.location.href="?"</script>';
-                            
-                            }?>
+    if($name === ''){
+        $error_namet = "Введите имя!";
+    } else if(strlen($name) < 2){
+        $error_namet = "Имя должно содержать не менее 2 символов";
+    }else if (preg_match('/[0-9@\$]/', $name)) {
+        $error_namet = "Имя не должно содержать цифры и специальные символы";
+    }else if (preg_match('/^[a-zA-Z]+$/u', $name)) {
+        $error_namet = "Имя должно содержать только русские буквы";
+    }
+    if ($number === '') {
+        $error_number = "Введите номер телефона!";
+    } else if (strlen($number) !== 11) {
+        $error_number = "Номер телефона должен содержать 11 цифр!";
+    } else if (preg_match('/^\d+$/', $number)) {
+        $error_number = "Телефон должен содержать только цифры";
+    }
+    if($text=== ''){
+        $error_textt = "Введите вопрос!";
+    } else if(strlen($password) < 10){
+        $error_textt = "Вопрос должен быть не менее 10 знаков!";
+    }
+    if(!isset($_POST['sogla'])){
+        $error_sogla = "Вы должны дать согласие на обработку персональных данных!";
+    }
+   
+    
+    if(empty($error_namet) && empty($error_textt) && empty($error_number)&& empty($error_sogla) ){
+ 
+
+        $sql="INSERT INTO question (name,text,number)
+        VALUE ('$name','$text','$number')";
+           $link ->query($sql);
+           echo '<p id="neyspeh">Вопрос отправлен</p>';
+    }        
+        }?>
 
 
-    <input type="text" placeholder="Введите ваше имя" id="q" name="name">
-    <input type="tel" placeholder="Введите ваш телефон" id="w" name="number">
-    <textarea name="text"  cols="10" rows="2" id="e" >Введите ваш вопрос</textarea>
+    <input type="text" placeholder="Введите ваше имя" id="q" name="name" value="<?=$name?>">
+    <h4><?php if(isset($error_namet)){echo $error_namet;}?></h4>
+    <input type="tel" placeholder="Введите ваш телефон" id="w" name="number" value="<?=$text?>">
+    <h4><?php if(isset($error_number)){echo $error_number;}?></h4>
+    <textarea name="text"  cols="10" rows="2" id="e" ><?=$text?></textarea>
+    <h4><?php if(isset($error_textt)){echo $error_textt;}?></h4>
     <div class="sogl">
-        <input type="checkbox" name="" id="obrabotka">
+        <input type="checkbox" name="sogla" id="obrabotka">
         <p>Даю свое согласие на  <a href="assets/doc/ПерсональныеДанные.docx" target="_blank" rel="noopener noreferrer"><u> обработку персональных данных</p></u></a>
-    </div>
+        </div>
+        <h4><?php if(isset($error_sogla)){echo $error_sogla;}?></h4>
     <input type="submit" id="sub" value="отправить" name="vopr">
 </form>
     

@@ -42,7 +42,7 @@ If(isset($_GET['page'])){
     if($page=='block'){include('includes/pages/block.php');}
     if($page=='del_kat'){include('includes/pages/del_kat.php');}
     if($page=='del_polz'){include('includes/pages/del_polz.php');}
-    
+    if($page=='ban'){include('includes/pages/ban.php');}
 } else{
     
 include('includes/start.php');}

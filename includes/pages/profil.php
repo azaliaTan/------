@@ -1,3 +1,17 @@
+<?php 
+if(!isset($_SESSION['uid'])){
+  echo '<script>document.location.href="?page=vhod"</script>';
+} 
+
+if($SIGNIN_USER['role'] == 0){
+    echo '<script>document.location.href="?page=ban"</script>';
+}elseif ($SIGNIN_USER['role'] == 2){
+    echo '<script>document.location.href="?page=admin_prof"</script>';
+}
+
+?>
+
+
 <div class="container">
       <p id="pop">Твой профиль</p>
 
@@ -6,11 +20,11 @@
         <img src="assets/img/ava.png" alt="avatarka">
          
         <div class="name_pr">
-            <p id="name_profile">Имя Фамилия</p>
-            <p id="pocta_prof">Почта Маил ру</p>
+            <p id="name_profile"><?=$SIGNIN_USER['name']?> <?=$SIGNIN_USER['fullname']?> </p>
+            <p id="pocta_prof"><?=$SIGNIN_USER['email']?></p>
         </div>
 
-        <button>Выйти из аккаунта</button>
+        <a href="?do=exit"><button>Выйти из аккаунта</button></a>
       </div>
         
 
@@ -70,9 +84,9 @@
         </div>
           
     <p id="poka">Показать все</p>
-
+ 
     <p id="pop">Адрес доставки</p>
-    <p id="adres_pr">Город Казань, улица Бари Галеева , дом 3</p>
-
+    <p id="adres_pr"><?=$SIGNIN_USER['adress']?></p>
+    
     </div>
    </div>

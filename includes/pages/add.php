@@ -1,3 +1,18 @@
+<?php
+    if(!isset($_SESSION['uid'])){
+        echo '<script>document.location.href="index.php"</script>';
+    }    
+?>
+
+<?php
+   if($SIGNIN_USER['role']!=2){
+        echo '<script>document.location.href="?page=katalog"</script>';
+    }    
+?>
+
+
+
+
 <div class="container">
     <p id="pop">Добавить товар</p>
 

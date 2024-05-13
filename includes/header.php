@@ -33,7 +33,7 @@
                 </a>
             </li>
             <li>
-                <a href="index.php">Главная</a>
+                <a href="?">Главная</a>
             </li>
             <li>
                 <a href="?page=katalog">Каталог</a>
@@ -42,16 +42,16 @@
                 <a href="?page=infor">О нас</a>
             </li>
             <li>
-                <a href="">Контакты</a>
+                <a href="#">Контакты</a>
             </li>
         </ul>
 
-        <li class="svyaz">
+        <ul class="svyaz">
             <p id="ss">Связаться с нами: </p>
             <img src="assets/img/tel.png" alt="telephone" id="tel">
             <a href="tel:+">+7 (999) 999 99 99</a>
 
-        </li>
+</ul>
         </div>
 
      </div>

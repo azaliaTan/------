@@ -30,12 +30,14 @@ if(isset($_POST['reg'])){
 
 
     
-    if ($name === '') {
+    if($name === ''){
         $error_name = "Введите имя!";
-    } else if (strlen($name) < 2) {
+    } else if(strlen($name) < 2){
         $error_name = "Имя должно содержать не менее 2 символов";
-    } else if (preg_match('/[0-9@\$]/', $name)) {
+    }else if (preg_match('/[0-9@\$]/', $name)) {
         $error_name = "Имя не должно содержать цифры и специальные символы";
+    }else if (preg_match('/^[a-zA-Z]+$/u', $name)) {
+        $error_name = "Имя должно содержать только русские буквы";
     }
     if ($adress === '') {
         $error_adress = "Введите адрес доставки!";
@@ -83,7 +85,7 @@ if(isset($_POST['reg'])){
             echo '<p id="neyspeh">Вы уже зарегистрированы в базе данных</p>';
         } else {
             $hash_password = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users (`name`,`fullname`,`adress`, `email`, `password`) VALUES ('$name', '$fullname','$adress','$email', '$hash_password')";
+            $sql = "INSERT INTO users (`name`,`fullname`,`adress`, `email`, `password`,`role`) VALUES ('$name', '$fullname','$adress','$email', '$hash_password',1)";
             $link->query($sql);
             echo '<p id="neyspeh">Регистрация прошла успешно,войдите в аккаунт</p>';
         }

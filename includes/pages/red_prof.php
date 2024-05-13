@@ -6,6 +6,10 @@ if(!isset($_SESSION['uid'])){
 if($SIGNIN_USER['role'] == 0){
     echo '<script>document.location.href="?page=ban"</script>';
 }
+
+if (!isset($_GET['id']) || $_GET['id'] != $USER_ID) {
+   echo  '<script>document.location.href="?page=profil"</script>';
+}
 ?>
 
 

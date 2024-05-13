@@ -14,7 +14,14 @@
                 <ul class="nav-buttons">
                     <li><a href="?page=izbr"><img src="assets/img/love.png" alt="love"></a></li>
                     <li><a href="?page=korzina"><img src="assets/img/shop.png" alt="shop"></a></li>
-                    <li><a href="?page=vhod"><img src="assets/img/user.png" alt="user"></a></li>
+                   
+                    <?php 
+            if(isset($_SESSION['uid']) && $SIGNIN_USER['role'] == 2){
+                echo '<li><a href="?page=admin_prof"><img src="assets/img/adm.png" alt="adminpanel"></a></li>';
+            }else{
+                echo '<li><a href="?page=vhod"><img src="assets/img/user.png" alt="user"></a></li>';
+            }
+        ?>
                     <li class="nav-buttons__burger"><a href="#burger-nav"><img src="assets/img/bur.png" alt="burger"></a></li>
                 </ul>
 

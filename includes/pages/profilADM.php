@@ -5,7 +5,10 @@ if(!isset($_SESSION['uid'])){
 
 if($SIGNIN_USER['role'] == 0){
     echo '<script>document.location.href="?page=ban"</script>';
-}
+}elseif($SIGNIN_USER['role'] == 1){
+        echo '<script>document.location.href="?profil"</script>';
+    }
+
 
 ?>
 

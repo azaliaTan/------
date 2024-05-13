@@ -44,7 +44,7 @@ if($SIGNIN_USER['role'] == 0){
     <td data-label="ID"><?=$user['id']?></td>
     <td data-label="Фамилия"><?=$user['name']?></td>
     <td data-label="Имя"><?=$user['fullname']?></td>
-    <td data-label="Почта"><!<a href="?page=profil&id=<?= $user['id'] ?>"><?=$user['email']?></a></td>
+    <td data-label="Почта"><a href="?page=profilADM&id=<?= $user['id'] ?>"><?=$user['email']?></a></td>
     <td data-label="Действия">
                    <div class="icons_pan"><?php
      

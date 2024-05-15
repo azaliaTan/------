@@ -278,6 +278,7 @@
 <div class="container">
     <p id="pop">Есть вопросы?</p>
  <form method="POST" name="vopr" id="vopr">
+ <a id="after_submit"></a>
  
 <?php
 
@@ -298,23 +299,26 @@ $text='';
 
     if($name === ''){
         $error_namet = "Введите имя!";
-    } else if(strlen($name) < 2){
+    } elseif(strlen($name) < 2){
         $error_namet = "Имя должно содержать не менее 2 символов";
-    }else if (preg_match('/[0-9@\$]/', $name)) {
+    }elseif (preg_match('/[0-9@\$]/', $name)) {
         $error_namet = "Имя не должно содержать цифры и специальные символы";
-    }else if (preg_match('/^[a-zA-Z]+$/u', $name)) {
+    }elseif (preg_match('/[a-zA-Z]+$/u', $name)) {
         $error_namet = "Имя должно содержать только русские буквы";
     }
     if ($number === '') {
         $error_number = "Введите номер телефона!";
-    } else if (strlen($number) !== 11) {
+    } else if (preg_match('/[a-zA-Z]/', $number)) {
+        $error_number = "Номер не должен содержать буквы!";
+    }else if (preg_match('/[а-яА-Я]/u', $number)) {
+        $error_number = "Номер не должен содержать  буквы!";
+    } elseif (strlen($number) != 11) {
         $error_number = "Номер телефона должен содержать 11 цифр!";
-    } else if (preg_match('/^\d+$/', $number)) {
-        $error_number = "Телефон должен содержать только цифры";
     }
+
     if($text=== ''){
         $error_textt = "Введите вопрос!";
-    } else if(strlen($password) < 10){
+    } elseif(strlen($text) < 10){
         $error_textt = "Вопрос должен быть не менее 10 знаков!";
     }
     if(!isset($_POST['sogla'])){
@@ -328,14 +332,17 @@ $text='';
         $sql="INSERT INTO question (name,text,number)
         VALUE ('$name','$text','$number')";
            $link ->query($sql);
-           echo '<p id="neyspeh">Вопрос отправлен</p>';
-    }        
+           echo '<p id="neyspeh">Вопрос отправлен</p> ';
+           echo '<script>window.location = "#after_submit";</script>';
+    } else{
+        echo '<script>window.location = "#after_submit";</script>';
+    }      
         }?>
 
 
     <input type="text" placeholder="Введите ваше имя" id="q" name="name" value="<?=$name?>">
     <h4><?php if(isset($error_namet)){echo $error_namet;}?></h4>
-    <input type="tel" placeholder="Введите ваш телефон" id="w" name="number" value="<?=$text?>">
+    <input type="text" placeholder="Введите ваш телефон" id="w" name="number" value="<?=$number?>">
     <h4><?php if(isset($error_number)){echo $error_number;}?></h4>
     <textarea name="text"  cols="10" rows="2" id="e" ><?=$text?></textarea>
     <h4><?php if(isset($error_textt)){echo $error_textt;}?></h4>

@@ -36,7 +36,7 @@ if(isset($_POST['reg'])){
         $error_name = "Имя должно содержать не менее 2 символов";
     }else if (preg_match('/[0-9@\$]/', $name)) {
         $error_name = "Имя не должно содержать цифры и специальные символы";
-    }else if (preg_match('/^[a-zA-Z]+$/u', $name)) {
+    }else if (preg_match('/[a-zA-Z]+$/u', $name)) {
         $error_name = "Имя должно содержать только русские буквы";
     }
     if ($adress === '') {
@@ -51,6 +51,8 @@ if(isset($_POST['reg'])){
         $error_fullname = "Фамилия должна содержать не менее 2 символов";
     } else if (preg_match('/[0-9@\$]/', $fullname)) {
         $error_fullname = "Фамилия не должна содержать цифры и специальные символы";
+    }else if (preg_match('/[a-zA-Z]+$/u', $fullname)) {
+        $error_fullname = "Фамилия должна содержать только русские буквы";
     }
 
     if($email === ''){
@@ -77,7 +79,7 @@ if(isset($_POST['reg'])){
 
     if(empty($error_email) && empty($error_pas) && empty($error_adress) && empty($error_sogla) && empty($error_fullname) && empty($error_name) && empty($error_rep) && ($password === $password_repeat)){
         // Успешная авторизация
-       // echo '<p id="q">Регистрация успешна</p>';
+      
 
         $sql = "SELECT COUNT(*) FROM users WHERE email = '$email'";
         $user_count = $link->query($sql)->fetchColumn();
@@ -118,7 +120,7 @@ if(isset($_POST['reg'])){
 
        <input type="password" placeholder="Подтвердите пароль" id="m" name="password_repeat">
        <h4><?php if(isset($error_rep)){echo $error_rep;}?></h4>
-       <input type="file" placeholder="аватарка" id="m" name="avatar" >
+       <input type="file" placeholder="аватарка" id="m" name="avatar"  >
 
        <div class="sogl">
         <input type="checkbox" name="sogla" id="obrabotka">

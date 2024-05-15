@@ -12,28 +12,32 @@ if($SIGNIN_USER['role'] == 0){
 
 ?>
 
+<?php 
+
+if(isset($_GET['id'])){
+    $get_id=$_GET['id'];
+    $sql="SELECT * FROM users WHERE id='$get_id'";
+    $result=$link->query($sql);
+    $user=$result-> fetch();
+}
+
+?>
+
 <div class="container">
-      <p id="pop">Твой профиль</p>
+      <p id="pop"> профиль</p>
 
       <div class="prof_inf">
 
         <img src="assets/img/ava.png" alt="avatarka">
          
         <div class="name_pr">
-            <p id="name_profile"><?=$SIGNIN_USER['name']?> <?=$SIGNIN_USER['fullname']?> </p>
-            <p id="pocta_prof"><?=$SIGNIN_USER['email']?></p>
+            <p id="name_profile"><?=$user['name']?> <?=$user['fullname']?> </p>
+            <p id="pocta_prof"><?=$user['email']?></p>
+        </div>
         </div>
 
-        <a href="?do=exit"><button>Выйти из аккаунта</button></a>
-      </div>
-        
-
-      <div class="prof_red">
-        <a href="?page=red_prof&id=<?=$SIGNIN_USER['id']?>"><button>редактировать</button></a>
-
-      </div>
      
-      <p id="pop">МОИ заказы</p>
+      <p id="pop">заказы</p>
 
       <div class="panel">
 
@@ -86,7 +90,7 @@ if($SIGNIN_USER['role'] == 0){
     <p id="poka">Показать все</p>
  
     <p id="pop">Адрес доставки</p>
-    <p id="adres_pr"><?=$SIGNIN_USER['adress']?></p>
+    <p id="adres_pr"><?=$user['adress']?></p>
     
     </div>
    </div>

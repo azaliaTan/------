@@ -1,7 +1,19 @@
+<?php 
+if(!isset($_SESSION['uid'])){
+  echo '<script>document.location.href="?page=vhod"</script>';
+} 
+
+if($SIGNIN_USER['role'] == 0){
+    echo '<script>document.location.href="?page=ban"</script>';
+}elseif ($SIGNIN_USER['role'] == 1){
+    echo '<script>document.location.href="?page=profil"</script>';
+}
+
+?>
 <div class="container">
    
    <p id="pop">Панель администратора</p>
-   <p id="name_admin">Здравствуй,Админ#1!</p>
+   <p id="name_admin">Здравствуй,Админ -<?=$SIGNIN_USER['name']?></p>
 
    <div class="vibor_pan">
        <a href="?page=admin"><p>Пользователи</p></a>
@@ -21,30 +33,28 @@
        </thead>
       
        <tbody>
+       <?php
+
+$sql=" SELECT * FROM tovar";
+$result= $link -> query($sql);
+foreach($result as $tovar){
+    
+    $kat_id = $tovar["category"]; 
+    $kategory = $link->query("SELECT * FROM category WHERE id=$kat_id")->fetch(PDO::FETCH_ASSOC); ?>
            <tr>
-               <td data-label="Артикул">1</td>
-               <td data-label="Название">Ананас Микс</td>
-               <td data-label="Категория">Плодовые и цитрусовые</td>
-               <td data-label="Стоимость">3500 Р</td>
+               <td data-label="Артикул"><?=$tovar['artikul']?></td>
+               <td data-label="Название"> <a href="?page=tovar&id=<?= $tovar['id'] ?>"></a><?=$tovar['name']?></td>
+               <td data-label="Категория" ><?=$kategory['name']?></td>
+               <td data-label="Стоимость"><?=$tovar['price']?> Р</td>
                <td data-label="Действия">
                    <div class="icons_pan">
                    <a href="?page=red&id=<?=$tovar['id']?>"><img src="assets/img/panREd.png" alt="red"></a>
-                   <a href="?page=del&id=<?=$tovar['id']?>">  <img src="assets/img/panDel.png" alt="del"></a>
+                   <a href="?page=del&id=<?=$tovar['id']?>"><img src="assets/img/panDel.png" alt="del"></a>
                    </div>
                </td>
            </tr>
-           <tr>
-               <td>1</td>
-               <td>Ананас Микс</td>
-               <td >Плодовые и цитрусовые</td>
-               <td>3500 Р</td>
-               <td >
-                   <div class="icons_pan">
-                       <a href="red.html"><img src="assets/img/panREd.png" alt="red"></a>
-                       <a href="del.html">  <img src="assets/img/panDel.png" alt="del"></a>
-                   </div>
-               </td>
-           </tr>
+         <?  }?>
+               
     
        </tbody>
        </table>

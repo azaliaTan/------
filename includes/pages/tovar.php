@@ -42,8 +42,8 @@ if(isset($_GET['id'])){
 
            
                 <p>Сорт : <?=$tovar['sort']?></p>
-                <p>Высота : <?=$tovar['height']?></p>
-                <p>Ширина : <?=$tovar['width']?></p>
+                <p>Высота : <?=$tovar['height']?> см</p>
+                <p>Ширина : <?=$tovar['width']?> см</p>
          
             
          </div>

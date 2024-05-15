@@ -359,6 +359,7 @@ body {
     justify-content: space-between ;
     align-items: center;
     text-align: center;
+    border: 1px solid white;
     
 
 }
@@ -775,9 +776,10 @@ footer {
 
 .katalog_sort{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 50px;
     font-size: 23px;
+    gap: 100px;
 }
 .kat_kat{
     display: flex;
@@ -788,29 +790,24 @@ footer {
 .kat_kat li:hover{
     font-weight: 550;
 }
-select {
-    padding: 10px 35px;
-    font-size: 23px;
-    border: 1px solid #000000;
-    border-radius: 15px;
-    color: #000000;
-    background-color: rgba(217, 217, 217, 0.67);
-    appearance: none; 
-    text-align: center;
-    margin-left: 20px;
-    cursor: pointer;
-}
 
-option {
-    padding: 10px;
+#sort_select_kat{
+    justify-content: center;
+    padding: 15px  ;
+    border: none;
+    border-radius: 20px;
     text-align: left;
+    background-color: rgba(217, 217, 217, 0.24);
+    font-size: 15px;
+    color:  rgba(40, 126, 19, 0.72) ;
+    cursor: pointer;
 
+    
+
+   
 }
 
-#sort_select_kat option{
-    font-size: 14px;
-  
-}
+
 
 
 .tovar_kat{
@@ -835,9 +832,6 @@ option {
    
 }
 
-.sort_kat{
-    display: none;
-}
 
 #kut_love{
     position: absolute;
@@ -1803,6 +1797,7 @@ h4{
     width: 33.33%; 
     box-sizing: border-box; 
     padding: 10px; 
+    
     
 
 }
@@ -4569,16 +4564,23 @@ h4{
         display: flex;
         width: 100%;
         justify-content: space-between;
-        gap: 50px;
+        gap: 25px;
     }
 
     .adaptive-table td::before {
         content: attr(data-label);
         font-size: 15px;
         font-weight: 500;
+        opacity: 0;
         
    
     }
+
+    .adaptive-table tr:first-child td::before {
+        opacity: 1;
+    }
+
+
 
     .adaptive-table td {
         padding-left: 0;

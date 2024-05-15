@@ -6,6 +6,9 @@ if(!isset($_SESSION['uid'])){
 if($SIGNIN_USER['role'] == 0){
     echo '<script>document.location.href="?page=ban"</script>';
 }
+if($SIGNIN_USER['role'] == 2){
+    echo '<script>document.location.href="?page=admin_prof"</script>';
+}
 
 ?>
 

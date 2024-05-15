@@ -6,20 +6,24 @@
     <p id="pop">каталог растений</p>
 
 <div class="katalog_sort">
-    <ul class="kat_kat">
-        <li>Лиственные и цветущие </li>
-        <li>Экзотические </li>
-        <li>Плодовые и цитрусовые</li>
-    </ul>
+    
 
     <ul class="sort_kat">
         <form>
             <label for="sort_select">Категория</label>
             <select name="sort" id="sort_select_kat">
-              <option value="">-- Выберите --</option>
-              <option value="kat1">Лиственные и цветущие</option>
-              <option value="kat2">Экзотические</option>
-              <option value="kat3">Плодовые и цитрусовые</option>
+            <option value="0">-Выберите из списка-</option>
+
+            <?php
+$kat_t = $link->query("SELECT * FROM category")->fetchAll(PDO::FETCH_ASSOC); 
+foreach($kat_t as $KAT){ 
+    ?>
+    <option value="<?=$KAT['id']?>"><?=$KAT['name']?></option>
+           <?  }?>
+           </select>
+       
+           
+              
             </select>
           </form>
     </ul>

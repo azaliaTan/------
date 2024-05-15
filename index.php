@@ -23,7 +23,7 @@ If(isset($_GET['page'])){
     $page=$_GET['page'];
     if($page=='add_kat'){include('includes/pages/add_kat.php');}
     if($page=='add'){include('includes/pages/add.php');}
-    if($page=='admin_kategoryy'){include('includes/pages/admin_kategoryy/php');}
+    if($page=='admin_kategoryy'){include('includes/pages/admin_kategoryy.php');}
     if($page=='tovar'){include('includes/pages/tovar.php');}
     if($page=='katalog'){include('includes/pages/katalog.php');}
     if($page=='infor'){include('includes/pages/infor.php');}

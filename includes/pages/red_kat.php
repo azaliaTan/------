@@ -40,12 +40,12 @@ if(!isset($_GET['id'])){
         $link -> query ($sql); 
         echo '<script>document.location.href="?page=admin_kategoryy"</script>';} }?>
 
-
+<title>ADMIN</title>
 <div class="container">
     <p id="pop">Изменить категорию</p>
 
     <form method="POST" name ="kat_red" id="add">
-
+        <p>Категория товара</p>
         <input type="text" placeholder="Название категории" id="m" name="name" value="<?=$kat['name']?>">
         <h4><?php if(isset($error_name)){echo $error_name;}?></h4>
         

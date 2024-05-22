@@ -21,10 +21,10 @@ if(isset($_GET['id'])){
     $user=$result-> fetch();
 }
 
-?>
+?><title>ADMIN</title>
 <div class="container">
 
-       
+
 <p id="pop">Вы хотите удалить этого пользователя?</p>
 <div class="delete">
 <p ><?=$user['name']?> <?=$user['fullname']?></p>

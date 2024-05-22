@@ -24,7 +24,7 @@ if(isset($_POST['vhod'])){
 } elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
     $error_email="<p>Неверный формат почты</p>";
 } elseif($temp_user == false){
-    $error="<p>Вас нет в базе</p>";
+    $error_email="<p>Вас нет в базе</p>";
 } elseif(empty($password)){
     $error_pas="<p>Введите пароль</p>";
 } elseif(!password_verify($password,$temp_user['password'])){
@@ -35,9 +35,8 @@ if(isset($_POST['vhod'])){
 if(empty($error) && empty($error_email) && empty($error_sogla) && empty($error_pas)){
   $_SESSION['uid'] = $temp_user['id'];
   
-  // Установка значения роли пользователя (по вашей логике)
-  $SIGNIN_USER['role'] = $temp_user['role']; // Предположим, что роль пользователя хранится в базе данных как 'role'
-
+  
+  $SIGNIN_USER['role'] = $temp_user['role']; 
   if($SIGNIN_USER['role'] == 1){
       echo '<script>document.location.href="?page=profil"</script>';
   } elseif ($SIGNIN_USER['role'] == 0) {
@@ -47,16 +46,16 @@ if(empty($error) && empty($error_email) && empty($error_sogla) && empty($error_p
   }
 }
 }
-?>
+?><title>ENTRANCE</title>
 <div class="container">
          <p id="pop">войти в аккаунт</p>
 
     <form method="POST" name ="vhod" id="add">
 
-      
+      <label>Почта</label>
        <input type="text" placeholder="Введите почту" id="m"  name="email" value="<?=$email?>">
        <h4><?php if(isset($error_email)){echo $error_email;}?></h4>
-
+       <label>Пароль</label>
        <input type="password" placeholder="Введите пароль" id="m" name="password">
        <h4><?php if(isset($error_pas)){echo $error_pas;}?></h4>
 

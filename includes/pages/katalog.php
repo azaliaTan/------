@@ -1,6 +1,6 @@
 
 <!--каталог-->
-
+<title>KATALOG</title>
 <div class="container">
 
     <p id="pop">каталог растений</p>
@@ -9,22 +9,23 @@
     
 
     <ul class="sort_kat">
-        <form>
+        <form id="k">
             <label for="sort_select">Категория</label>
             <select name="sort" id="sort_select_kat">
-            <option value="0">-Выберите из списка-</option>
+            <option value="0">-Выберите--</option>
 
             <?php
-$kat_t = $link->query("SELECT * FROM category")->fetchAll(PDO::FETCH_ASSOC); 
-foreach($kat_t as $KAT){ 
-    ?>
-    <option value="<?=$KAT['id']?>"><?=$KAT['name']?></option>
-           <?  }?>
-           </select>
+        $kat_t = $link->query("SELECT * FROM category")->fetchAll(PDO::FETCH_ASSOC);
+        foreach($kat_t as $KAT){
+        ?>
+            <option value="<?=$KAT['id']?>"><?=$KAT['name']?></option>
+
+
+        <?php } ?>
        
            
-              
             </select>
+         <button id="sh">Показать</button>
           </form>
     </ul>
 
@@ -39,8 +40,11 @@ foreach($kat_t as $KAT){
             </select>
           </form>
     </ul>
+
+  
     
  </div>
+ <button id="sh2">Показать</button>
     
     
 
@@ -51,6 +55,22 @@ foreach($kat_t as $KAT){
 
             $sql=" SELECT * FROM tovar";
             $result= $link -> query($sql);
+             
+
+if(isset($_GET['category'])){
+    $get_category=$_GET['category'];
+    $sql="SELECT * FROM category WHERE id='$get_category'";
+    $result=$link->query($sql);
+    $temp_categ=$result->fetch();
+    if($temp_categ != false){
+        $dop_sql="WHERE category='$get_category'";
+    }else{
+        echo '<script>document.location.href="?page=katalog"</script>';
+    }
+}else{
+    $dop_sql='';
+} 
+$tovar=$link -> query("SELECT * FROM tovar $dop_sql")->fetchAll(PDO::FETCH_ASSOC);
             foreach($result as $tovar){?>
 
            <div class="tovar_katalog">
@@ -63,7 +83,7 @@ foreach($kat_t as $KAT){
 
             <div class="text_tovar_kat">
                 <p><?=$tovar['name']?></p>
-                <p><?=$tovar['price']?></p>
+                <p><?=$tovar['price']?> ₽</p>
                 </a>
                 <a href="?page=korzina">
                     <button>

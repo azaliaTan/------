@@ -11,7 +11,7 @@ if($SIGNIN_USER['role'] == 2){
 }
 
 ?>
-
+<title>PROFILE</title>
 <div class="container">
       <p id="pop">Твой профиль</p>
 

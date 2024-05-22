@@ -9,7 +9,7 @@ if($SIGNIN_USER['role'] == 0){
     echo '<script>document.location.href="?page=profil"</script>';
 }
 
-?>
+?><title>ADMIN</title>
 <div class="container">
     <p id="pop">Редактировать товар</p>
     <?php 
@@ -129,7 +129,7 @@ if(!isset($_GET['id'])){
             $error_kat = "Выберите категорию!";}
        
         if(empty($error_name) && empty($error_artikul) && empty($error_price) && empty($error_sovet) && empty($error_type) && empty($error_genus) && empty($error_sort) && empty($error_height) && empty($error_width)  && empty($error_opis) && empty($error_kat)){
-            // Успешная авторизация
+            // Успешн
        
     
         
@@ -155,10 +155,13 @@ if(!isset($_GET['id'])){
 
     <form method="POST" name ="red_tovar" id="add">
 
-        <input type="text" placeholder="Наименование товара" id="m" name="name" value="<?=$tovar['name']?>">
+    <label >Имя</label>
+    <input type="text"  id="m" name="name" value="<?=$tovar['name']?>">
         <h4><?php if(isset($error_name)){echo $error_name;}?></h4>
-        <input type="text" placeholder="Артикул товара" id="m" name="artikul" value="<?=$tovar['artikul']?>">
+        <label >Артикул</label>
+        <input type="text"  id="m" name="artikul" value="<?=$tovar['artikul']?>">
         <h4><?php if(isset($error_artikul)){echo $error_artikul;}?></h4>
+        <label >Категория</label>
         <select name="category" id="category">
             <option value="0">-Выберите из списка-</option>
 
@@ -172,27 +175,32 @@ foreach($kat_t as $KAT){
            
            <h4><?php if(isset($error_kat)){echo $error_kat;}?></h4>
         
-       
-
+           <label >Описание</label>
        <textarea name="opis"  cols="1" rows="1" id="m"><?=$tovar['opis']?></textarea>
        <h4><?php if(isset($error_opis)){echo $error_opis;}?></h4>
-
+          
+       <label >Советы по уходу</label>
        <textarea name="sovet" cols="1" rows="1" id="m" ><?=$tovar['sovet']?></textarea>
        <h4><?php if(isset($error_sovet)){echo $error_sovet;}?></h4>
 
-       <input type="text" placeholder="Тип растения" id="m" name="type" value="<?=$tovar['type']?>">
+
+       <label >Тип растения</label>
+       <input type="text"  id="m" name="type" value="<?=$tovar['type']?>">
        <h4><?php if(isset($error_type)){echo $error_type;}?></h4>
-       <input type="text" placeholder="Стоимость товара" id="m" name="price" value="<?=$tovar['price']?>">
+       <label >Стоимость</label>
+       <input type="text"  id="m" name="price" value="<?=$tovar['price']?>">
        <h4><?php if(isset($error_price)){echo $error_price;}?></h4>
-       <input type="text" placeholder="Ширина" id="m" name="width" value="<?=$tovar['width']?>">
-       <h4><?php if(isset($error_width)){echo $error_width;}?></h4>
-       <input type="text" placeholder="Сорт растения" id="m" name="sort" value="<?=$tovar['sort']?>">
+       <label >Сорт растения</label>
+       <input type="text"  id="m" name="sort" value="<?=$tovar['sort']?>">
        <h4><?php if(isset($error_sort)){echo $error_sort;}?></h4>
-       <input type="text" placeholder="Род растения" id="m" name="genus" value="<?=$tovar['genus']?>">
+       <label >Род растения</label>
+       <input type="text"  id="m" name="genus" value="<?=$tovar['genus']?>">
        <h4><?php if(isset($error_genus)){echo $error_genus;}?></h4>
-
-
-       <input type="text" placeholder="Высота" id="m" name="height" value="<?=$tovar['height']?>">
+       <label >Ширина растения</label>
+       <input type="text"  id="m" name="width" value="<?=$tovar['width']?>">
+       <h4><?php if(isset($error_width)){echo $error_width;}?></h4>
+       <label >Высота растения</label>
+       <input type="text"  id="m" name="height" value="<?=$tovar['height']?>">
        <h4><?php if(isset($error_height)){echo $error_height;}?></h4>
 
        <input type="file" placeholder="Фотография" id="mm">

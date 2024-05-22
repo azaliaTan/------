@@ -10,6 +10,7 @@ if($SIGNIN_USER['role'] == 0){
 }
 
 ?>
+<title>ADMIN</title>
 <div class="container">
    
    <p id="pop">Панель администратора</p>

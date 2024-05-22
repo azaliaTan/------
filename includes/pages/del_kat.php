@@ -21,6 +21,7 @@ if(isset($_GET['id'])){
 }
 
 ?>
+<title>ADMIN</title>
 <div class="container">
 
 

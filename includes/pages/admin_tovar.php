@@ -10,6 +10,7 @@ if($SIGNIN_USER['role'] == 0){
 }
 
 ?>
+ <title>ADMIN</title>
 <div class="container">
    
    <p id="pop">Панель администратора</p>
@@ -43,7 +44,7 @@ foreach($result as $tovar){
     $kategory = $link->query("SELECT * FROM category WHERE id=$kat_id")->fetch(PDO::FETCH_ASSOC); ?>
            <tr>
                <td data-label="Артикул"><?=$tovar['artikul']?></td>
-               <td data-label="Название"> <a href="?page=tovar&id=<?= $tovar['id'] ?>"></a><?=$tovar['name']?></td>
+               <td data-label="Название"> <a href="?page=tovar&id=<?= $tovar['id'] ?>"><?=$tovar['name']?></td></a>
                <td data-label="Категория" ><?=$kategory['name']?></td>
                <td data-label="Стоимость"><?=$tovar['price']?> Р</td>
                <td data-label="Действия">

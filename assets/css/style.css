@@ -32,7 +32,95 @@ body {
     font-family: var(--font-family-m);
     
   }
+label{
+    color: rgba(0, 0, 0, 0.419);
+    font-family: var(--font-family-m);
+    font-size: 22px;
+    text-transform: uppercase;
+    font-style: italic;
 
+}
+
+#sh{
+    border: 1px solid white;
+    font-size: 20px;
+    color: black;
+    margin-left: 30px;
+    background-color: white;
+    text-transform: uppercase;
+    font-family: var(--font-family-m);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+#sh:hover{
+    border: 1px solid black;
+}
+#sh2{
+    border: 1px solid white;
+    font-size: 20px;
+    color: black;
+   
+    background-color: white;
+    text-transform: uppercase;
+    font-family: var(--font-family-m);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+
+    display: none;
+}
+
+@media (max-width: 1440px) {
+    label{
+        font-size: 18px;
+
+    }
+}
+@media (max-width: 1000px) {
+    label{
+        font-size: 17px;
+    }
+    #sh{
+        font-size: 17px;
+        padding: 8px;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 800px) {
+    label{
+        font-size: 15px;
+    }
+    #sh{
+        font-size: 15px;
+        padding: 8px;
+        margin-left: 20px;
+    }
+
+}
+@media (max-width: 768px) {
+  #sh{
+    display: none;
+  }
+  #sh2{
+    display: block;
+ margin: 0 auto;
+ font-size: 14px;
+        padding: 8px;
+  }
+}
+@media (max-width: 500px) {
+    label{
+        font-size: 13px;
+    }
+    #sh2{
+       
+     font-size: 12px;
+            padding: 8px;
+            margin-top: 15px
+      }
+}
 /*ШАПКА*/
 
 .container{
@@ -632,7 +720,7 @@ body {
 #vopr{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     margin-top: 60px;
@@ -665,7 +753,7 @@ body {
     gap: 10px;
   
 }
-.sogl p{
+#sogl p{
 font-size: 20px;
 }
 #obrabotka{
@@ -861,12 +949,18 @@ footer {
     align-items: center;
     justify-content: center;
     margin-top: 25px;
+    
 }
 .text_tovar_kat p {
     font-size: 27px;
     font-weight: 400;
     width: 250px;
     margin-bottom: 20px;
+    overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
 }
 .text_tovar_kat button{
       font-size: 18px;
@@ -926,6 +1020,7 @@ footer {
     text-align: center;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -935,6 +1030,9 @@ footer {
     margin-bottom: 9px;
     letter-spacing: 5px;
     text-transform: uppercase;
+    word-wrap: break-word; /* Перенос по словам */
+    max-width: 500px; /* Максимальная ширина блока */
+   
 }
 
 #artikul{
@@ -1329,6 +1427,7 @@ footer {
     font-size: 30px;
     color:  rgba(40, 126, 19, 0.72) ;
     cursor: pointer;
+    
 
     
 
@@ -1670,6 +1769,8 @@ h4{
 .panel-table td {
     font-size: 26px;
     font-weight: 340;
+    
+   
 }
 
 .panel-table th, 
@@ -1678,7 +1779,10 @@ h4{
     border: 1px solid #ffffff;
     padding: 20px;
     text-align: center;
+   
+    
 }
+
 
 .panel-table th {
     background-color: #ffffff;
@@ -2021,6 +2125,7 @@ h4{
     
 #name_tovar{
     font-size: 40px;
+    max-width: 400px
    
 }
 
@@ -2362,8 +2467,8 @@ h4{
 }
 
 #vopr{
-    gap: 25px;
-    margin-top: 40px;
+    gap: 10px;
+    margin-top: 30px;
 }
 
 #q, #w, #e{
@@ -2594,7 +2699,7 @@ padding-top: 60px;
 }
 #add{
     max-width: 400px;
-    gap: 15px;
+    gap: 7px;
     padding-top: 50px;
 }
 h4{
@@ -2789,7 +2894,7 @@ font-size: 20px;
     }
     #add{
         max-width: 400px;
-        gap: 10px;
+        gap: 7px;
         padding-top: 50px;
     }
     h4{
@@ -3149,6 +3254,10 @@ footer {
 
 #name_tovar{
     font-size: 24px;
+    max-width: 300px;
+    
+    
+
 }
 #artikul{
 
@@ -4053,7 +4162,7 @@ h4{
    
 
     #vopr{
-        gap: 16px;
+        gap: 10px;
         margin-top: 30px;
     }
     
@@ -4226,6 +4335,9 @@ h4{
 
 #name_tovar{
     font-size: 18px;
+    max-width: 200px;
+    
+
 }
 #artikul{
 

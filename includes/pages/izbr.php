@@ -1,4 +1,16 @@
+<?php 
+if(!isset($_SESSION['uid'])){
+  echo '<script>document.location.href="?page=vhod"</script>';
+} 
+
+if($SIGNIN_USER['role'] == 0){
+    echo '<script>document.location.href="?page=ban"</script>';
+}
+
+?>
+<title>IZBRANNOE</title>
 <div class="container">
+
 
     <p id="pop">Избранное</p>
 

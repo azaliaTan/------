@@ -22,7 +22,7 @@ if(isset($_GET['id'])){
 }
 
 ?>
-
+<title>PROFILE</title>
 <div class="container">
       <p id="pop"> профиль</p>
 

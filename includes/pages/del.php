@@ -21,9 +21,10 @@ if(isset($_GET['id'])){
 }
 
 ?>
+<title>ADMIN</title>
 <div class="container">
 
-       
+<title>ADMIN</title>
 <p id="pop">Вы хотите удалить этот товар?</p>
 <div class="delete">
 <p ><?=$tovar['name']?></p>
@@ -40,8 +41,4 @@ if(isset($_GET['ok'])){
 
   }?> 
 </div>
-
-
-
-
 </div>

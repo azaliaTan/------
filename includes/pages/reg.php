@@ -97,34 +97,35 @@ if(isset($_POST['reg'])){
 }
 
 ?>
-
+<title>
+REGISTRATION</title>
 <div class="container">
          <p id="pop">создать аккаунт</p>
 
     <form method="POST" name ="reg" id="add">
-
-        <input type="text" placeholder="Введите имя" id="m" name="name" value="<?=$name?>">
+    <label>Имя</label>
+        <input type="text"  id="m" name="name" value="<?=$name?>">
         <h4><?php if(isset($error_name)){echo $error_name;}?></h4>
-        
-        <input type="text" placeholder="Введите фамилию" id="m" name="fullname" value="<?=$fullname?>">
+        <label>Фамилия</label>
+        <input type="text"  id="m" name="fullname" value="<?=$fullname?>">
         <h4><?php if(isset($error_fullname)){echo $error_fullname;}?></h4>
-
-       <input type="text" placeholder="Введите адрес доставки" id="m" name="adress" value="<?=$adress?>">
+        <label>Адрес доставки</label>
+       <input type="text" id="m" name="adress" value="<?=$adress?>">
        <h4><?php if(isset($error_adress)){echo $error_adress;}?></h4>
-
-       <input type="text" placeholder="Введите почту" id="m" name="email" value="<?=$email?>">
+       <label>Почта</label>
+       <input type="text"  id="m" name="email" value="<?=$email?>">
        <h4><?php if(isset($error_email)){echo $error_email;}?></h4>
-
-       <input type="password" placeholder="Введите пароль" id="m"  name="password">
+       <label>пароль</label>
+       <input type="password"  id="m"  name="password">
        <h4><?php if(isset($error_pas)){echo $error_pas;}?></h4>
-
-       <input type="password" placeholder="Подтвердите пароль" id="m" name="password_repeat">
+       <label>повторите пароль</label>
+       <input type="password" id="m" name="password_repeat">
        <h4><?php if(isset($error_rep)){echo $error_rep;}?></h4>
        <input type="file" placeholder="аватарка" id="m" name="avatar"  >
 
        <div class="sogl">
         <input type="checkbox" name="sogla" id="obrabotka">
-        <p>Даю свое согласие на  <a href="assets/doc/ПерсональныеДанные.docx" target="_blank" rel="noopener noreferrer"><u> обработку персональных данных</p></u></a>
+        <p id="uyt">Даю свое согласие на  <a href="assets/doc/ПерсональныеДанные.docx" target="_blank" rel="noopener noreferrer"><u> обработку персональных данных</p></u></a>
         </div>
         <h4><?php if(isset($error_sogla)){echo $error_sogla;}?></h4>
    

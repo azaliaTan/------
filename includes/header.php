@@ -11,6 +11,7 @@
             <input type="text" placeholder="поиск" id="header_input">
 
             <li class="icons">
+                
                 <ul class="nav-buttons">
                     <li><a href="?page=izbr"><img src="assets/img/love.png" alt="love"></a></li>
                     <li><a href="?page=korzina"><img src="assets/img/shop.png" alt="shop"></a></li>

@@ -5,6 +5,9 @@ if(isset($_GET['id'])){
     $sql="SELECT * FROM tovar WHERE id='$get_id'";
     $result=$link->query($sql);
     $tovar=$result-> fetch();
+
+   
+     
 }
 
 ?>
@@ -13,7 +16,7 @@ if(isset($_GET['id'])){
 
 
 
-
+<title>TOVAR</title>
 <div class="container">
         <div class="tovar_inf">
 
@@ -25,7 +28,7 @@ if(isset($_GET['id'])){
 
                <p id="name_tovar"><?=$tovar['name']?></p>
                <p id="artikul">Артикул <?=$tovar['artikul']?></p>
-               <p id="price"><?=$tovar['price']?></p>
+               <p id="price"><?=$tovar['price']?> ₽</p>
 
                <div class="tovar_act">
                 <a href="?page=korzina"><button> в корзину</button></a>
@@ -34,8 +37,13 @@ if(isset($_GET['id'])){
                
         <div class="tovar_details">
 
+           
+<?php 
+    $kat_id = $tovar["category"]; 
+    $kategory = $link->query("SELECT * FROM category WHERE id=$kat_id")->fetch(PDO::FETCH_ASSOC); ?>
+
               
-                <p>Категория : <?=$tovar['kategory']?></p>
+                <p>Категория : <?=$kategory['name']?></p>
                 <p>Тип растения : <?=$tovar['type']?></p>
                 <p>Род растений : <?=$tovar['genus']?></p>
                 

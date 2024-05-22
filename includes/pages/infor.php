@@ -1,6 +1,8 @@
+<title>INFORMATiON</title>
 <div class="container">
 
 <div class="infa">
+
 
     <p id="p"> botanica
     </p>

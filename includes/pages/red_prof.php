@@ -11,7 +11,7 @@ if ($_GET['id'] != $USER_ID && $SIGNIN_USER['role'] == 1) {
     echo '<script>document.location.href="?page=profil"</script>';
 }
 ?>
-
+<title>ADMIN</title>
 <div class="container">
          <p id="pop">Редактировать профиль</p>
 
@@ -93,15 +93,17 @@ if(!isset($_GET['id'])){
 
 
     <form method="POST" name ="red" id="add">
-
-        <input type="text" placeholder="Изменить имя" id="m" name="name" value="<?=$user['name']?>">
+           <label>Имя</label>
+        <input type="text"  id="m" name="name" value="<?=$user['name']?>">
         <h4><?php if(isset($error_name)){echo $error_name;}?></h4>
-        <input type="text" placeholder="Изменить фамилию" id="m" name="fullname" value="<?=$user['fullname']?>">
+        <label>Фамилия</label>
+        <input type="text" id="m" name="fullname" value="<?=$user['fullname']?>">
         <h4><?php if(isset($error_fullname)){echo $error_fullname;}?></h4>
-       <input type="text" placeholder="Изменить адрес доставки" id="m" name="adress" value="<?=$user['adress']?>">
+        <label>Адрес доставки</label>
+       <input type="text"  id="m" name="adress" value="<?=$user['adress']?>">
        <h4><?php if(isset($error_adress)){echo $error_adress;}?></h4>
-
-       <input type="text" placeholder="Изменить почту" id="m" name="email" value="<?=$user['email']?>">
+       <label>Почта </label>
+       <input type="text" id="m" name="email" value="<?=$user['email']?>">
        <h4><?php if(isset($error_email)){echo $error_email;}?></h4>
 
        <input type="file" placeholder="Изменить аватарку" id="m" name="photo">

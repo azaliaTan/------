@@ -1,4 +1,5 @@
 <!--БАННЕР-->
+<title>BOTANICA</title>
 
 <div class="banner">
         <div class="container">
@@ -339,11 +340,13 @@ $text='';
     }      
         }?>
 
-
-    <input type="text" placeholder="Введите ваше имя" id="q" name="name" value="<?=$name?>">
+<label>Ваше имя</label>
+    <input type="text"  id="q" name="name" value="<?=$name?>">
     <h4><?php if(isset($error_namet)){echo $error_namet;}?></h4>
-    <input type="text" placeholder="Введите ваш телефон" id="w" name="number" value="<?=$number?>">
+    <label>Ваш телефон</label>
+    <input type="text" id="w" name="number" value="<?=$number?>">
     <h4><?php if(isset($error_number)){echo $error_number;}?></h4>
+    <label>Ваш вопрос</label>
     <textarea name="text"  cols="10" rows="2" id="e" ><?=$text?></textarea>
     <h4><?php if(isset($error_textt)){echo $error_textt;}?></h4>
     <div class="sogl">

@@ -10,7 +10,7 @@ if($SIGNIN_USER['role'] == 0){
 }
 
 ?>
-
+<title>ADMIN</title>
 <div class="container">
     <p id="pop">Добавить категорию</p>
     <?php
@@ -29,7 +29,7 @@ if($name === ''){
 } else if(strlen($name) < 4){
     $error_name = "Название должно содержать не менее 4 символов";
 }else if (preg_match('/[0-9@\$]/', $name)) {
-    $error_name = "Назавание не должно содержать цифры и специальные символы";
+    $error_name = "Название не должно содержать цифры и специальные символы";
 }else if (preg_match('/^[a-zA-Z]+$/u', $name)) {
     $error_name = "Название должно содержать только русские буквы";
 }

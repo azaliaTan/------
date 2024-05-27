@@ -41,36 +41,24 @@ label{
 
 }
 
-#sh{
-    border: 1px solid white;
+#j{
+    align-items: center;
     font-size: 20px;
-    color: black;
-    margin-left: 30px;
+    font-weight: 450;
+    color: rgba(155, 103, 103, 1);
+    border: none;
     background-color: white;
-    text-transform: uppercase;
-    font-family: var(--font-family-m);
     cursor: pointer;
-    padding: 10px;
-    border-radius: 10px;
+    margin: 20px 0 40vh 0;
 
 }
-#sh:hover{
-    border: 1px solid black;
-}
-#sh2{
-    border: 1px solid white;
-    font-size: 20px;
-    color: black;
-   
-    background-color: white;
-    text-transform: uppercase;
-    font-family: var(--font-family-m);
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 10px;
 
-    display: none;
+#j:hover{
+    color: black;
+
 }
+
+
 
 @media (max-width: 1440px) {
     label{
@@ -82,44 +70,20 @@ label{
     label{
         font-size: 17px;
     }
-    #sh{
-        font-size: 17px;
-        padding: 8px;
-        margin-left: 20px;
-    }
 }
 @media (max-width: 800px) {
     label{
         font-size: 15px;
     }
-    #sh{
-        font-size: 15px;
-        padding: 8px;
-        margin-left: 20px;
-    }
+   
 
 }
-@media (max-width: 768px) {
-  #sh{
-    display: none;
-  }
-  #sh2{
-    display: block;
- margin: 0 auto;
- font-size: 14px;
-        padding: 8px;
-  }
-}
+
 @media (max-width: 500px) {
     label{
         font-size: 13px;
     }
-    #sh2{
-       
-     font-size: 12px;
-            padding: 8px;
-            margin-top: 15px
-      }
+
 }
 /*ШАПКА*/
 
@@ -886,7 +850,7 @@ footer {
     border-radius: 20px;
     text-align: left;
     background-color: rgba(217, 217, 217, 0.24);
-    font-size: 15px;
+    font-size: 23px;
     color:  rgba(40, 126, 19, 0.72) ;
     cursor: pointer;
 
@@ -961,6 +925,7 @@ footer {
 	display: -webkit-box;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
+    text-transform:capitalize;
 }
 .text_tovar_kat button{
       font-size: 18px;
@@ -1870,23 +1835,16 @@ h4{
     
     text-decoration: underline;
   text-underline-offset: 10px;
-  /* Толщина подчёркивания — 4 пикселя */
   text-decoration-thickness: 2px;
   
     
 }
 
 
-/* .adm_kat {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 50px;
-} */
 
 .adm_kat{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 70px 0 70px 0;
     flex-wrap: wrap;
     
@@ -1966,7 +1924,7 @@ h4{
     font-size: 30px;
     text-align: center;
     font-family: var(--font-family-m);
-    margin: 40px 0 200px 0;
+    margin: 40px 0 40vh 0 ;
 
 }
 #uuu a{
@@ -4292,8 +4250,9 @@ h4{
 }
 #sort_select_kat {
     width: 150px; /* Ширина поля выбора */
-    font-size: 11px; /* Размер шрифта в поле выбора */
+    font-size: 10px; /* Размер шрифта в поле выбора */
     height: 35px;
+    padding: 4px;
   }
   
 #kut_love{

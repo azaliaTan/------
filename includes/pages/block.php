@@ -1,4 +1,5 @@
-<title>BLOCK</title>
+<head><title>BLOCK</title></head>
+
 <div class="container">
 
        

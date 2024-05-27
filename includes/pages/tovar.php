@@ -15,8 +15,8 @@ if(isset($_GET['id'])){
 
 
 
+<head><title>TOVAR</title></head>
 
-<title>TOVAR</title>
 <div class="container">
         <div class="tovar_inf">
 

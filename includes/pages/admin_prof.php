@@ -20,8 +20,8 @@ if(isset($_GET['id'])){
     $novost=$result-> fetch();
 }
 
-?>
-  <title>PROFIL</title>
+?> <head> <title>PROFIL</title></head>
+  
 <div class="container">
     <p id="pop">Твой профиль</p>
 

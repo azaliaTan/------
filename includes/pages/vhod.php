@@ -46,17 +46,19 @@ if(empty($error) && empty($error_email) && empty($error_sogla) && empty($error_p
   }
 }
 }
-?><title>ENTRANCE</title>
+?>
+<head><title>ENTRANCE</title></head>
+
 <div class="container">
          <p id="pop">войти в аккаунт</p>
 
     <form method="POST" name ="vhod" id="add">
 
       <label>Почта</label>
-       <input type="text" placeholder="Введите почту" id="m"  name="email" value="<?=$email?>">
+       <input type="text" id="m"  name="email" value="<?=$email?>">
        <h4><?php if(isset($error_email)){echo $error_email;}?></h4>
        <label>Пароль</label>
-       <input type="password" placeholder="Введите пароль" id="m" name="password">
+       <input type="password"  id="m" name="password">
        <h4><?php if(isset($error_pas)){echo $error_pas;}?></h4>
 
        

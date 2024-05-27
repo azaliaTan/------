@@ -21,7 +21,9 @@ if(isset($_GET['id'])){
     $user=$result-> fetch();
 }
 
-?><title>ADMIN</title>
+?>
+<head><title>ADMIN</title></head>
+
 <div class="container">
 
 

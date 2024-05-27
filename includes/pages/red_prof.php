@@ -11,7 +11,8 @@ if ($_GET['id'] != $USER_ID && $SIGNIN_USER['role'] == 1) {
     echo '<script>document.location.href="?page=profil"</script>';
 }
 ?>
-<title>ADMIN</title>
+<head><title>ADMIN</title></head>
+
 <div class="container">
          <p id="pop">Редактировать профиль</p>
 

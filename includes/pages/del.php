@@ -21,7 +21,9 @@ if(isset($_GET['id'])){
 }
 
 ?>
-<title>ADMIN</title>
+
+<head><title>ADMIN</title></head>
+
 <div class="container">
 
 <title>ADMIN</title>

@@ -40,7 +40,9 @@ if(!isset($_GET['id'])){
         $link -> query ($sql); 
         echo '<script>document.location.href="?page=admin_kategoryy"</script>';} }?>
 
-<title>ADMIN</title>
+
+<head><title>ADMIN</title></head>
+
 <div class="container">
     <p id="pop">Изменить категорию</p>
 

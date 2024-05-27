@@ -1,5 +1,6 @@
 <!--БАННЕР-->
-<title>BOTANICA</title>
+<head><title>BOTANICA</title></head>
+
 
 <div class="banner">
         <div class="container">

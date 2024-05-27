@@ -9,8 +9,8 @@ if($SIGNIN_USER['role'] == 0){
     echo '<script>document.location.href="?page=profil"</script>';
 }
 
-?>
-<title>ADMIN</title>
+?><head><title>ADMIN</title></head>
+
 <div class="container">
    
    <p id="pop">Панель администратора</p>

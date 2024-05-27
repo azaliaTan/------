@@ -8,7 +8,8 @@ if($SIGNIN_USER['role'] == 0){
 }
 
 ?>
-<title>IZBRANNOE</title>
+<head><title>IZBRANNOE</title></head>
+
 <div class="container">
 
 

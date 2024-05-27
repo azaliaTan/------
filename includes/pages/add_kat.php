@@ -10,7 +10,8 @@ if($SIGNIN_USER['role'] == 0){
 }
 
 ?>
-<title>ADMIN</title>
+ <head><title>ADMIN</title></head>
+
 <div class="container">
     <p id="pop">Добавить категорию</p>
     <?php

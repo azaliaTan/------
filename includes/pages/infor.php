@@ -1,4 +1,6 @@
-<title>INFORMATiON</title>
+
+<head><title>INFORMATiON</title></head>
+
 <div class="container">
 
 <div class="infa">

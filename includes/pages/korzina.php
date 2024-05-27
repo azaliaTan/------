@@ -8,8 +8,8 @@ if($SIGNIN_USER['role'] == 0){
 }
 
 ?>
+<head><title>KORZINA</title></head>
 
-<title>KORZINA</title>
 
 <div class="container">
           <p id="pop">Корзина</p>

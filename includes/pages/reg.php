@@ -97,8 +97,9 @@ if(isset($_POST['reg'])){
 }
 
 ?>
-<title>
-REGISTRATION</title>
+<head><title>
+REGISTRATION</title></head>
+
 <div class="container">
          <p id="pop">создать аккаунт</p>
 

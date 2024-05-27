@@ -9,9 +9,11 @@ if($SIGNIN_USER['role'] != 0){
 }
 
 
-?>
-<title>BAN</title>
+?> <head><title>BAN</title></head>
+
 <p id="pop">Вы заблокированы Администратором</p>
 <div class="container">
+
 <p id="uuu">Напишите нам на почту, чтобы Мы решили Вашу ситуацию: <a href="mailto:">botanica@mail.ru</a></p>
+
 </div>

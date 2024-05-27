@@ -11,8 +11,8 @@
 ?>
 
 
+<head><title>ADMIN</title></head>
 
-<title>ADMIN</title>
 <div class="container">
     <p id="pop">Добавить товар</p>
 

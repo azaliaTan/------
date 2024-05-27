@@ -19,7 +19,11 @@
                     <?php 
             if(isset($_SESSION['uid']) && $SIGNIN_USER['role'] == 2){
                 echo '<li><a href="?page=admin_prof"><img src="assets/img/adm.png" alt="adminpanel"></a></li>';
-            }else{
+            
+            }elseif(isset($_SESSION['uid']) && $SIGNIN_USER['role'] == 0) {
+                echo '<li><a href="?do=exit"><img src="assets/img/vihod.png" alt="exit"></a></li>';
+            }
+            else{
                 echo '<li><a href="?page=vhod"><img src="assets/img/user.png" alt="user"></a></li>';
             }
         ?>
